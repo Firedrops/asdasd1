@@ -197,4 +197,3 @@ div:contains("^ideagen3D$") { font-family: "move-x" !important; }
 h1, h2, h3, h4, h5, h6, span {  text-shadow: 0.05px 0.05px 0.1px #000000;  }
 
 p, hh, .shopify-payment-button__button {  text-shadow: 0.05px 0.05px 0.1px #000000;  }
-
