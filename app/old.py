@@ -11,36 +11,8 @@ app = Flask(__name__)
 @app.route('/webhook', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        wh_payload = request.json
-        print(wh_payload)
+        print(request.json)
         return 'success', 200
-
-        wh_first_name = wh_payload["customer"][0]["first_name"]
-        wh_first_name = wh_payload["customer"][0]["last_name"]
-        wh_first_name = wh_payload["customer"][0]["email"]
-
-
-        # Initialize lists
-        wh_items = []
-        wh_groups = []
-
-
-        # Grab items purchased, iteratively
-        # https://stackoverflow.com/questions/34818782/iterate-through-nested-json-object-and-get-values-with-python
-        for item in wh_payload["line_items"]:
-            wh_items.append(item.get("name"))
-
-        # Add to wh_item_groups if wh_items match certain keywords
-
-        for item in wh_items:
-            if "ender" in wh_items:
-                wh_groups.append("Ender3V2")
-
-            if "Sapphire" in wh_items:
-                wh_groups.append("Sapphire Plus")
-                
-            if "Octoprint" in wh_items:
-                wh_groups.append("Octoprint")
 
         body = {'data': [
                     {
